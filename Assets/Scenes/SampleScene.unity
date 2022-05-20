@@ -3117,11 +3117,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698862235}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1743487944 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8388285558249638370, guid: 55c44d9f7dd069e4cad5b1e1d9504a8e, type: 3}
-  m_PrefabInstance: {fileID: 8388285558717794858}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1743487945 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8388285558249638371, guid: 55c44d9f7dd069e4cad5b1e1d9504a8e, type: 3}
@@ -3514,6 +3509,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 241071853}
     m_Modifications:
+    - target: {fileID: 786043954414919821, guid: 12a5599a1aea7fd47b0ba06ae87ecab0, type: 3}
+      propertyPath: range
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 786043954414919821, guid: 12a5599a1aea7fd47b0ba06ae87ecab0, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1743487945}
+    - target: {fileID: 786043954414919821, guid: 12a5599a1aea7fd47b0ba06ae87ecab0, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1743487945}
+    - target: {fileID: 786043954414919821, guid: 12a5599a1aea7fd47b0ba06ae87ecab0, type: 3}
+      propertyPath: distanceToTarget
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4828479307360477940, guid: 12a5599a1aea7fd47b0ba06ae87ecab0, type: 3}
       propertyPath: m_Name
       value: Agent2(Enemy)
@@ -3566,25 +3577,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4828479307360477943, guid: 12a5599a1aea7fd47b0ba06ae87ecab0, type: 3}
-      propertyPath: angle
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4828479307360477943, guid: 12a5599a1aea7fd47b0ba06ae87ecab0, type: 3}
-      propertyPath: radius
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4828479307360477943, guid: 12a5599a1aea7fd47b0ba06ae87ecab0, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 8388285558249638371, guid: 55c44d9f7dd069e4cad5b1e1d9504a8e, type: 3}
-    - target: {fileID: 4828479307360477943, guid: 12a5599a1aea7fd47b0ba06ae87ecab0, type: 3}
-      propertyPath: playerRef
-      value: 
-      objectReference: {fileID: 1743487944}
-    - target: {fileID: 4828479307360477943, guid: 12a5599a1aea7fd47b0ba06ae87ecab0, type: 3}
-      propertyPath: canSeePlayer
-      value: 1
+    - target: {fileID: 4828479307360477942, guid: 12a5599a1aea7fd47b0ba06ae87ecab0, type: 3}
+      propertyPath: m_AgentTypeID
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12a5599a1aea7fd47b0ba06ae87ecab0, type: 3}
