@@ -3581,7 +3581,20 @@ PrefabInstance:
       propertyPath: m_AgentTypeID
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9097367977423794159, guid: 12a5599a1aea7fd47b0ba06ae87ecab0, type: 3}
+      propertyPath: range
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9097367977423794159, guid: 12a5599a1aea7fd47b0ba06ae87ecab0, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1743487945}
+    - target: {fileID: 9097367977423794159, guid: 12a5599a1aea7fd47b0ba06ae87ecab0, type: 3}
+      propertyPath: angleDetection
+      value: 75
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 786043954414919821, guid: 12a5599a1aea7fd47b0ba06ae87ecab0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 12a5599a1aea7fd47b0ba06ae87ecab0, type: 3}
 --- !u!1001 &8388285558717794858
 PrefabInstance:

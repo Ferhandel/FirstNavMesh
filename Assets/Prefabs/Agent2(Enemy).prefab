@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4828479307360477941}
-  - component: {fileID: 786043954414919821}
+  - component: {fileID: 9097367977423794159}
   - component: {fileID: 4828479307360477942}
   m_Layer: 0
   m_Name: Agent2(Enemy)
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &786043954414919821
+--- !u!114 &9097367977423794159
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,11 +42,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4828479307360477940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba528e74a9100c84288dbc7cb7ba27cb, type: 3}
+  m_Script: {fileID: 11500000, guid: fefc5bcc35fe4044eb30fd8079b59076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  distanceToPlayer: 20
+  target: {fileID: 0}
+  range: 0
 --- !u!195 &4828479307360477942
 NavMeshAgent:
   m_ObjectHideFlags: 0
