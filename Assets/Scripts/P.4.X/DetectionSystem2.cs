@@ -3,31 +3,46 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+//O axente persegue se o target está dentro dunha distancia determinada en 360 grados e ten liña de visión P.4.1.2
 public class DetectionSystem2 : MonoBehaviour
 {
     public Transform target;
     public float range;
-    public float angleDetection;
+    public Transform home;
+    public float radiusDetection;
     NavMeshAgent agent;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
+         agent = GetComponent<NavMeshAgent>();
+         home = GameObject.FindGameObjectWithTag("Enemy Home").transform;
+         target = GameObject.FindGameObjectWithTag("Player").transform;
+         
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        //distancia entre 2 puntos
+        RaycastHit hit;
+        Vector3 targetDirection = (target.position - transform.position).normalized;
         float distanceToTarget = Vector3.Distance(target.position, transform.position);
-        //calculamos ángulos
-        Vector3 targetDir = target.position - transform.position;
-        //no se que leches es esto:
-        angleDetection = Vector3.Angle(targetDir, transform.forward);
-        if (distanceToTarget <= range){
-            agent.destination = target.position;
+        if(Physics.Raycast(transform.position + Vector3.up, targetDirection, out hit, radiusDetection, -1)){
+            //enemigo quieto por perdida de visibilidad del player.
+            if(hit.transform.tag == "Obstacle"){
+                agent.destination = transform.position;
+            } else{
+                CanFollowPlayer();
+            }
         }
-
+    }
+    public bool CanFollowPlayer(){
+        float distanceToTarget = Vector3.Distance(target.position, transform.position);
+        if(distanceToTarget < radiusDetection){
+            agent.destination = target.position;
+            return true;
+        } else{
+            agent.destination = home.position;
+            return false;
+        }
     }
 }
