@@ -3,21 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-//O axente persegue se o target está dentro dunha distancia determinada en 360 grados e ten liña de visión P.4.1.2
-public class DetectionSystem2 : MonoBehaviour
+public class DetectionSyst2 : MonoBehaviour
 {
     public Transform target;
-    public float range;
     public Transform home;
-    public float radiusDetection;
+    public float range;
+    public float angleDetection;
     NavMeshAgent agent;
-    
+
+    // Start is called before the first frame update
     void Start()
     {
-         agent = GetComponent<NavMeshAgent>();
-         home = GameObject.FindGameObjectWithTag("Enemy Home").transform;
-         target = GameObject.FindGameObjectWithTag("Player").transform;
-         
+        agent = GetComponent<NavMeshAgent>();
+        home  = GameObject.FindGameObjectWithTag("Home").transform;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
@@ -26,23 +25,23 @@ public class DetectionSystem2 : MonoBehaviour
         RaycastHit hit;
         Vector3 targetDirection = (target.position - transform.position).normalized;
         float distanceToTarget = Vector3.Distance(target.position, transform.position);
-        if(Physics.Raycast(transform.position + Vector3.up, targetDirection, out hit, radiusDetection, -1)){
-            //enemigo quieto por perdida de visibilidad del player.
-            if(hit.transform.tag == "Obstacle"){
+        if(Physics.Raycast(transform.position + Vector3.up, targetDirection, out hit, angleDetection, -1)){
+            if(hit.transform.tag == "Obstaculo"){
                 agent.destination = transform.position;
             } else{
-                CanFollowPlayer();
+                CanFollow();
             }
         }
     }
-    public bool CanFollowPlayer(){
+    public bool CanFollow(){
         float distanceToTarget = Vector3.Distance(target.position, transform.position);
-        if(distanceToTarget < radiusDetection){
+        if(distanceToTarget < angleDetection){
             agent.destination = target.position;
             return true;
         } else{
             agent.destination = home.position;
             return false;
+            
         }
     }
 }
